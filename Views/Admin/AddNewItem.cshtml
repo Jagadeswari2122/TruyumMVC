@@ -1,0 +1,60 @@
+﻿@model Truyum.Models.MenuItems
+
+@{
+    ViewData["Title"] = "AddNewItem";
+}
+
+<h3>Add New Item</h3>
+
+<h4>Menu Items</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddNewItem">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label"></label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+
+                <select asp-for="Category" class="form-control" required>
+                    <option value="">-- Select Category --</option>
+                    <option value="MainCourse">Main Course</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Drinks">Drinks</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Active" class="control-label"></label><br />
+                    <input type="radio" name="Active" value="Yes"> Yes&nbsp;&nbsp;
+                    <input type="radio" name="Active" value="No"> No
+                <span asp-validation-for="Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <input type="checkbox" name="FreeDelivery" value="Yes">
+                <label asp-for="FreeDelivery" class="control-label"></label>
+                <span asp-validation-for="Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Truyum.Models.Cart>
+
+@{
+    ViewData["Title"] = "GetCartItems";
+}
+
+<h3>Get Cart Items</h3>
+
+<p>
+    <a asp-action="GetItems">Menu Items</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CartId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreeDelivery)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int Total = 0; }
+        @foreach (var item in Model)
+        {
+            Total += Convert.ToInt32(item.Price);
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CartId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FreeDelivery)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemId)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteCartItem", new { id = item.CartId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p class="total">Total Price:@Total</p>
+
