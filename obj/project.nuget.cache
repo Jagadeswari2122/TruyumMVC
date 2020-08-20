@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M9nxL0OTuBJwDirX06p+qqY00lXxi32jceyrhyVAitYPaYBK+cQ3qdzFer920RLavtfFsFOY5K/8DV6P/aOBaQ==",
+  "dgSpecHash": "ulOpsuPePtcAufkw461QihZEH4I5nUUKIq32P9nJ2m6P6glnQaJTdTpcawDdiHUjttF7iAp8D/pFySc2UrywcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ravi Teja\\source\\repos\\Truyum\\Truyum.csproj",
+  "projectFilePath": "C:\\Users\\Ravi Teja\\source\\repos\\TruyumOnline\\Truyum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ravi Teja\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ravi Teja\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

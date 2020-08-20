@@ -15,10 +15,11 @@ namespace Truyum.Repository
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("INSERT INTO MenuItems(ItemName, Price,Category,FreeDelivery,Active) VALUES(@ItemName, @Price,@Category,@FreeDelivery,@Active)", con);
+                SqlCommand command = new SqlCommand("INSERT INTO MenuItems(ItemName, Price,Category,Date,FreeDelivery,Active) VALUES(@ItemName, @Price,@Category,@Date,@FreeDelivery,@Active)", con);
                 command.Parameters.AddWithValue("@ItemName", item.ItemName);
                 command.Parameters.AddWithValue("@Price", item.Price);
                 command.Parameters.AddWithValue("@Category", item.Category);
+                command.Parameters.AddWithValue("@Date", item.Date);
                 command.Parameters.AddWithValue("@FreeDelivery", item.FreeDelivery);
                 command.Parameters.AddWithValue("@Active", item.Active);
 
@@ -58,6 +59,7 @@ namespace Truyum.Repository
                     item.ItemName = reader["ItemName"].ToString();
                     item.Price = reader["Price"].ToString();
                     item.Category = reader["Category"].ToString();
+                    item.Date = reader["Date"].ToString();
                     item.FreeDelivery = reader["FreeDelivery"].ToString();
                     item.Active = reader["Active"].ToString();
 
@@ -87,6 +89,7 @@ namespace Truyum.Repository
                     item.ItemName = rdr["ItemName"].ToString();
                     item.Price = rdr["Price"].ToString();
                     item.Category = rdr["Category"].ToString();
+                    item.Date = rdr["Date"].ToString();
                     item.FreeDelivery = rdr["FreeDelivery"].ToString();
                     item.Active = rdr["Active"].ToString();
                 }
@@ -99,11 +102,12 @@ namespace Truyum.Repository
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("UPDATE MenuItems SET ItemName=@ItemName, Price=@Price,Category=@Category, FreeDelivery=@FreeDelivery, Active=@Active Where ItemId=@ItemId", con);
+                SqlCommand command = new SqlCommand("UPDATE MenuItems SET ItemName=@ItemName, Price=@Price,Category=@Category,Date=@Date, FreeDelivery=@FreeDelivery, Active=@Active Where ItemId=@ItemId", con);
                 command.Parameters.AddWithValue("@ItemId", item.ItemId);
                 command.Parameters.AddWithValue("@ItemName", item.ItemName);
                 command.Parameters.AddWithValue("@Price", item.Price);
                 command.Parameters.AddWithValue("@Category", item.Category);
+                command.Parameters.AddWithValue("@Date", item.Date);
                 command.Parameters.AddWithValue("@FreeDelivery", item.FreeDelivery);
                 command.Parameters.AddWithValue("@Active", item.Active);
 
@@ -113,30 +117,6 @@ namespace Truyum.Repository
             }
         }
 
-        void IAdminRepository.AddItem(MenuItems item)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAdminRepository.DeleteItem(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<MenuItems> IAdminRepository.GetAllItems()
-        {
-            throw new NotImplementedException();
-        }
-
-        MenuItems IAdminRepository.GetItemById(int? id)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IAdminRepository.UpdateItem(MenuItems item)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

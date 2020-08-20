@@ -14,10 +14,11 @@ namespace Truyum.Repository
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Cart(ItemName, Price,Category,FreeDelivery,ItemId,Active) VALUES(@ItemName, @Price,@Category,@FreeDelivery,@ItemId,@Active)", con);
+                SqlCommand command = new SqlCommand("INSERT INTO Cart(ItemName, Price,Category,Date,FreeDelivery,ItemId,Active) VALUES(@ItemName, @Price,@Category,@Date,@FreeDelivery,@ItemId,@Active)", con);
                 command.Parameters.AddWithValue("@ItemName", item.ItemName);
                 command.Parameters.AddWithValue("@Price", item.Price);
                 command.Parameters.AddWithValue("@Category", item.Category);
+                command.Parameters.AddWithValue("@Date", item.Date);
                 command.Parameters.AddWithValue("@FreeDelivery", item.FreeDelivery);
                 command.Parameters.AddWithValue("@ItemId", item.ItemId);
                 command.Parameters.AddWithValue("@Active", item.Active);
@@ -47,6 +48,7 @@ namespace Truyum.Repository
                     item.ItemName = rdr["ItemName"].ToString();
                     item.Price = rdr["Price"].ToString();
                     item.Category = rdr["Category"].ToString();
+                    item.Date = rdr["Date"].ToString();
                     item.FreeDelivery = rdr["FreeDelivery"].ToString();
                     item.Active = rdr["Active"].ToString();
                 }
@@ -84,6 +86,7 @@ namespace Truyum.Repository
                     cart.ItemName = reader["ItemName"].ToString();
                     cart.Price = reader["Price"].ToString();
                     cart.Category = reader["Category"].ToString();
+                    cart.Date = reader["Date"].ToString();
                     cart.FreeDelivery = reader["FreeDelivery"].ToString();
                     cart.ItemId = Convert.ToInt32(reader["ItemId"]);
                     cart.Active = reader["Active"].ToString();
@@ -113,6 +116,7 @@ namespace Truyum.Repository
                     cart.ItemName = rdr["ItemName"].ToString();
                     cart.Price = rdr["Price"].ToString();
                     cart.Category = rdr["Category"].ToString();
+                    cart.Date = rdr["Date"].ToString();
                     cart.FreeDelivery = rdr["FreeDelivery"].ToString();
                     cart.ItemId = Convert.ToInt32(rdr["ItemId"]);
                     cart.Active = rdr["Active"].ToString();

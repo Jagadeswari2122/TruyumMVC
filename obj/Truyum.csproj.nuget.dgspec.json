@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ravi Teja\\source\\repos\\Truyum\\Truyum.csproj": {}
+    "C:\\Users\\Ravi Teja\\source\\repos\\TruyumOnline\\Truyum.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ravi Teja\\source\\repos\\Truyum\\Truyum.csproj": {
+    "C:\\Users\\Ravi Teja\\source\\repos\\TruyumOnline\\Truyum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ravi Teja\\source\\repos\\Truyum\\Truyum.csproj",
+        "projectUniqueName": "C:\\Users\\Ravi Teja\\source\\repos\\TruyumOnline\\Truyum.csproj",
         "projectName": "Truyum",
-        "projectPath": "C:\\Users\\Ravi Teja\\source\\repos\\Truyum\\Truyum.csproj",
+        "projectPath": "C:\\Users\\Ravi Teja\\source\\repos\\TruyumOnline\\Truyum.csproj",
         "packagesPath": "C:\\Users\\Ravi Teja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ravi Teja\\source\\repos\\Truyum\\obj\\",
+        "outputPath": "C:\\Users\\Ravi Teja\\source\\repos\\TruyumOnline\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ravi Teja\\AppData\\Roaming\\NuGet\\NuGet.Config",

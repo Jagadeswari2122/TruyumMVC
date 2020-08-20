@@ -21,8 +21,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Price)
             </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FreeDelivery)
@@ -49,15 +53,18 @@
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FreeDelivery)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Active)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Update", new {  id=item.ItemId  }) |
-                @Html.ActionLink("Details", "GetItem", new {  id=item.ItemId  }) |
-                @Html.ActionLink("Delete", "DeleteItem", new {  id=item.ItemId  })
+                @Html.ActionLink("Edit", "Update", new { id = item.ItemId }) |
+                @Html.ActionLink("Details", "GetItem", new { id = item.ItemId }) |
+                @Html.ActionLink("Delete", "DeleteItem", new { id = item.ItemId })
             </td>
         </tr>
 }

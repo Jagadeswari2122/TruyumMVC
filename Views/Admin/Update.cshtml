@@ -27,23 +27,43 @@
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Category" class="control-label"></label>
-                <input asp-for="Category" class="form-control" />
+                <select asp-for="Category" class="form-control">
+                    <option value="">-- Select Category --</option>
+                    <option value="MainCourse">Main Course</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Drinks">Drinks</option>
+                </select>
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
+            
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="FreeDelivery" class="control-label"></label>
-                <input asp-for="FreeDelivery" class="form-control" />
+                <select asp-for="FreeDelivery" class="form-control">
+                    <option value="">-- Select Delivery --</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
                 <span asp-validation-for="FreeDelivery" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Active" class="control-label"></label>
-                <input type="radio" name="Active" value="Yes"> Yes&nbsp;&nbsp;
-                <input type="radio" name="Active" value="No"> No
+                <select asp-for="Active" class="form-control">
+                    <option value="">-- Select--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
                 <span asp-validation-for="Active" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div> <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
